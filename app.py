@@ -8,7 +8,7 @@ import keras
 from streamlit_player import st_player 
 
 def names(number):
-    if number==1:
+    if number==0:
         return 'a Tumor'
     else:
         return 'not a tumor'
@@ -20,7 +20,7 @@ def classifier():
         st.image(image, caption='Uploaded Image.', use_column_width=True)
         st.write("")
         st.write("Classifying...")
-        model=keras.models.load_model('CNN_Brain_tumor1.h5')
+        model=keras.models.load_model('CNN_Brain_tumor2.h5')
         
         x = np.array(image.resize((128,128)))
         x = x.reshape(1,128,128,3)
